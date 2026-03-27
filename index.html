@@ -5,165 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>花园游戏厅</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Crimson+Pro:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Custom cursor -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
-
-<!-- Floating background petals -->
 <div class="bg-petals" id="bg-petals"></div>
 
-<!-- Corner leaf decorations -->
-<div class="leaf-deco leaf-bl">
-  <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="40" cy="130" rx="38" ry="22" fill="#8fb878" opacity="0.7" transform="rotate(-30 40 130)"/>
-    <ellipse cx="70" cy="148" rx="30" ry="16" fill="#6a9658" opacity="0.5" transform="rotate(-10 70 148)"/>
-    <ellipse cx="18" cy="108" rx="22" ry="12" fill="#a0c870" opacity="0.45" transform="rotate(-50 18 108)"/>
-  </svg>
-</div>
-<div class="leaf-deco leaf-br">
-  <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="120" cy="130" rx="38" ry="22" fill="#8fb878" opacity="0.7" transform="rotate(30 120 130)"/>
-    <ellipse cx="90" cy="148" rx="30" ry="16" fill="#6a9658" opacity="0.5" transform="rotate(10 90 148)"/>
-    <ellipse cx="142" cy="108" rx="22" ry="12" fill="#a0c870" opacity="0.45" transform="rotate(50 142 108)"/>
-  </svg>
-</div>
-<div class="leaf-deco leaf-tl">
-  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="30" cy="30" rx="28" ry="14" fill="#8fb878" opacity="0.4" transform="rotate(40 30 30)"/>
-    <ellipse cx="10" cy="55" rx="20" ry="10" fill="#a0c870" opacity="0.3" transform="rotate(60 10 55)"/>
-  </svg>
-</div>
+<!-- Leaf corners -->
+<svg class="leaf-deco leaf-bl" viewBox="0 0 200 200" fill="none">
+  <ellipse cx="50"  cy="160" rx="55" ry="26" fill="#8fb878" opacity="0.62" transform="rotate(-35 50 160)"/>
+  <ellipse cx="88"  cy="178" rx="40" ry="18" fill="#6a9658" opacity="0.42" transform="rotate(-12 88 178)"/>
+  <ellipse cx="22"  cy="135" rx="30" ry="14" fill="#a0c870" opacity="0.35" transform="rotate(-55 22 135)"/>
+  <ellipse cx="65"  cy="148" rx="18" ry="8"  fill="#c8e8a0" opacity="0.28" transform="rotate(-20 65 148)"/>
+</svg>
+<svg class="leaf-deco leaf-br" viewBox="0 0 200 200" fill="none">
+  <ellipse cx="150" cy="160" rx="55" ry="26" fill="#8fb878" opacity="0.62" transform="rotate(35 150 160)"/>
+  <ellipse cx="112" cy="178" rx="40" ry="18" fill="#6a9658" opacity="0.42" transform="rotate(12 112 178)"/>
+  <ellipse cx="178" cy="135" rx="30" ry="14" fill="#a0c870" opacity="0.35" transform="rotate(55 178 135)"/>
+  <ellipse cx="135" cy="148" rx="18" ry="8"  fill="#c8e8a0" opacity="0.28" transform="rotate(20 135 148)"/>
+</svg>
+<svg class="leaf-deco leaf-tr" viewBox="0 0 150 150" fill="none">
+  <ellipse cx="120" cy="40" rx="38" ry="16" fill="#8fb878" opacity="0.3" transform="rotate(50 120 40)"/>
+  <ellipse cx="140" cy="68" rx="26" ry="11" fill="#a0c870" opacity="0.22" transform="rotate(70 140 68)"/>
+</svg>
 
-<!-- Music toggle -->
-<button class="music-btn" id="music-btn" title="音乐开关">🎵</button>
+<button class="music-btn" id="music-btn">♪</button>
 
-<!-- ══════════ PAGE 1: BLOOM ══════════ -->
+<!-- ═══ PAGE 1: BLOOM ═══ -->
 <div class="page" id="page-bloom">
 
+  <div class="bloom-rings">
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+  </div>
+
   <div class="flower-wrap">
-    <svg class="flower-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <svg class="flower-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="p1" cx="50%" cy="18%" r="80%">
-          <stop offset="0%" stop-color="#d0e8ff"/>
-          <stop offset="100%" stop-color="#7aaee0"/>
+        <radialGradient id="pg1" cx="50%" cy="12%" r="88%">
+          <stop offset="0%"   stop-color="#eaf4ff"/>
+          <stop offset="40%"  stop-color="#aacef2"/>
+          <stop offset="100%" stop-color="#5c90d0"/>
         </radialGradient>
-        <radialGradient id="p2" cx="50%" cy="18%" r="80%">
-          <stop offset="0%" stop-color="#c0dcfc"/>
-          <stop offset="100%" stop-color="#84aedd"/>
+        <radialGradient id="pg2" cx="50%" cy="12%" r="88%">
+          <stop offset="0%"   stop-color="#e0f0ff"/>
+          <stop offset="40%"  stop-color="#9ec4ee"/>
+          <stop offset="100%" stop-color="#6494cc"/>
         </radialGradient>
-        <radialGradient id="p3" cx="50%" cy="18%" r="80%">
-          <stop offset="0%" stop-color="#cce4ff"/>
-          <stop offset="100%" stop-color="#90bce8"/>
+        <radialGradient id="pg3" cx="50%" cy="12%" r="88%">
+          <stop offset="0%"   stop-color="#eef6ff"/>
+          <stop offset="40%"  stop-color="#b6d6f8"/>
+          <stop offset="100%" stop-color="#74a8e0"/>
         </radialGradient>
-        <radialGradient id="p4" cx="50%" cy="18%" r="80%">
-          <stop offset="0%" stop-color="#b8d4f8"/>
-          <stop offset="100%" stop-color="#78a4d8"/>
+        <radialGradient id="pg4" cx="50%" cy="12%" r="88%">
+          <stop offset="0%"   stop-color="#d8ecff"/>
+          <stop offset="40%"  stop-color="#92bcea"/>
+          <stop offset="100%" stop-color="#5488c8"/>
         </radialGradient>
-        <radialGradient id="center-g" cx="40%" cy="40%" r="70%">
-          <stop offset="0%" stop-color="#f5fbff"/>
-          <stop offset="100%" stop-color="#b8d8f8"/>
+        <radialGradient id="cg" cx="36%" cy="32%" r="72%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="35%"  stop-color="#e8f4ff"/>
+          <stop offset="100%" stop-color="#a4c8f0"/>
         </radialGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        <filter id="pglow" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="cglow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="10" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
 
       <!-- Stem -->
-      <line class="anim-stem" x1="130" y1="224" x2="130" y2="158"
-            stroke="#8fb878" stroke-width="4.5" stroke-linecap="round"/>
+      <line class="anim-stem" x1="200" y1="372" x2="200" y2="236"
+            stroke="#8fb878" stroke-width="5.5" stroke-linecap="round"/>
       <!-- Leaves -->
-      <ellipse class="anim-leaf1" cx="112" cy="196" rx="24" ry="11"
-               fill="#8fb878" opacity="0.75" transform="rotate(-38 112 196)"/>
-      <ellipse class="anim-leaf2" cx="150" cy="184" rx="20" ry="10"
-               fill="#6a9658" opacity="0.65" transform="rotate(34 150 184)"/>
+      <ellipse class="anim-leaf anim-leaf1" cx="172" cy="318" rx="36" ry="15"
+               fill="#8fb878" opacity="0.78" transform="rotate(-42 172 318)"/>
+      <ellipse class="anim-leaf anim-leaf2" cx="232" cy="296" rx="30" ry="13"
+               fill="#6a9658" opacity="0.68" transform="rotate(38 232 296)"/>
+      <ellipse class="anim-leaf anim-leaf3" cx="157" cy="270" rx="20" ry="9"
+               fill="#a0c870" opacity="0.48" transform="rotate(-58 157 270)"/>
 
       <!-- 8 Petals -->
-      <ellipse class="petal p0" cx="130" cy="94" rx="19" ry="44" fill="url(#p1)" opacity="0.85"/>
-      <ellipse class="petal p1" cx="130" cy="94" rx="19" ry="44" fill="url(#p2)" opacity="0.80"
-               transform="rotate(45,130,148)"/>
-      <ellipse class="petal p2" cx="130" cy="94" rx="19" ry="44" fill="url(#p3)" opacity="0.82"
-               transform="rotate(90,130,148)"/>
-      <ellipse class="petal p3" cx="130" cy="94" rx="19" ry="44" fill="url(#p4)" opacity="0.78"
-               transform="rotate(135,130,148)"/>
-      <ellipse class="petal p4" cx="130" cy="94" rx="19" ry="44" fill="url(#p1)" opacity="0.85"
-               transform="rotate(180,130,148)"/>
-      <ellipse class="petal p5" cx="130" cy="94" rx="19" ry="44" fill="url(#p2)" opacity="0.80"
-               transform="rotate(225,130,148)"/>
-      <ellipse class="petal p6" cx="130" cy="94" rx="19" ry="44" fill="url(#p3)" opacity="0.82"
-               transform="rotate(270,130,148)"/>
-      <ellipse class="petal p7" cx="130" cy="94" rx="19" ry="44" fill="url(#p4)" opacity="0.78"
-               transform="rotate(315,130,148)"/>
+      <ellipse class="petal p0" cx="200" cy="118" rx="28" ry="74" fill="url(#pg1)" filter="url(#pglow)"/>
+      <ellipse class="petal p1" cx="200" cy="118" rx="28" ry="74" fill="url(#pg2)" filter="url(#pglow)" transform="rotate(45,200,228)"/>
+      <ellipse class="petal p2" cx="200" cy="118" rx="28" ry="74" fill="url(#pg3)" filter="url(#pglow)" transform="rotate(90,200,228)"/>
+      <ellipse class="petal p3" cx="200" cy="118" rx="28" ry="74" fill="url(#pg4)" filter="url(#pglow)" transform="rotate(135,200,228)"/>
+      <ellipse class="petal p4" cx="200" cy="118" rx="28" ry="74" fill="url(#pg1)" filter="url(#pglow)" transform="rotate(180,200,228)"/>
+      <ellipse class="petal p5" cx="200" cy="118" rx="28" ry="74" fill="url(#pg2)" filter="url(#pglow)" transform="rotate(225,200,228)"/>
+      <ellipse class="petal p6" cx="200" cy="118" rx="28" ry="74" fill="url(#pg3)" filter="url(#pglow)" transform="rotate(270,200,228)"/>
+      <ellipse class="petal p7" cx="200" cy="118" rx="28" ry="74" fill="url(#pg4)" filter="url(#pglow)" transform="rotate(315,200,228)"/>
 
-      <!-- Flower center -->
-      <g class="anim-center" filter="url(#glow)">
-        <circle cx="130" cy="148" r="24" fill="url(#center-g)"/>
-        <circle cx="130" cy="148" r="14" fill="white" opacity="0.55"/>
-        <circle cx="130" cy="148" r="6"  fill="#e8f6ff" opacity="0.9"/>
+      <!-- Center -->
+      <g class="anim-center" filter="url(#cglow)">
+        <circle cx="200" cy="228" r="40" fill="url(#cg)"/>
+        <circle cx="200" cy="228" r="25" fill="white" opacity="0.45"/>
+        <circle cx="200" cy="228" r="10" fill="#f2f9ff" opacity="0.95"/>
+        <circle cx="200" cy="213" r="3"   fill="#b0d4f0" opacity="0.65"/>
+        <circle cx="213" cy="221" r="2.5" fill="#b0d4f0" opacity="0.55"/>
+        <circle cx="210" cy="237" r="2.5" fill="#b0d4f0" opacity="0.55"/>
+        <circle cx="190" cy="237" r="2.5" fill="#b0d4f0" opacity="0.55"/>
+        <circle cx="187" cy="221" r="2.5" fill="#b0d4f0" opacity="0.55"/>
       </g>
     </svg>
   </div>
 
-  <!-- Nickname entry bar -->
+  <!-- Entry bar at bottom -->
   <div class="entry-bar">
     <div class="entry-inner">
       <input class="entry-input" id="nickname-input"
-             type="text" placeholder="Enter your nickname..."
+             type="text" placeholder="enter your name..."
              maxlength="18" autocomplete="off" spellcheck="false"/>
-      <button class="entry-btn" id="enter-btn">Enter ✿</button>
+      <button class="entry-btn" id="enter-btn">✦ enter</button>
     </div>
   </div>
 </div>
 
-<!-- ══════════ PAGE 2: PETAL MENU ══════════ -->
+<!-- ═══ PAGE 2: PETAL MENU ═══ -->
 <div class="page page-hidden" id="page-menu">
+  <div class="menu-halo"></div>
   <div class="petal-menu">
-    <button class="pm-btn" data-idx="0" onclick="openGame(0)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">🎮</span>
-      <span class="pm-label">Game 1</span>
-    </button>
-    <button class="pm-btn" data-idx="1" onclick="openGame(1)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">🧩</span>
-      <span class="pm-label">Game 2</span>
-    </button>
-    <button class="pm-btn" data-idx="2" onclick="openGame(2)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">🎯</span>
-      <span class="pm-label">Game 3</span>
-    </button>
-    <button class="pm-btn" data-idx="3" onclick="openGame(3)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">🌸</span>
-      <span class="pm-label">Game 4</span>
-    </button>
-    <button class="pm-btn" data-idx="4" onclick="openGame(4)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">🦋</span>
-      <span class="pm-label">Game 5</span>
-    </button>
-    <button class="pm-btn" data-idx="5" onclick="openGame(5)">
-      <div class="pm-shape"></div>
-      <span class="pm-icon">⭐</span>
-      <span class="pm-label">Game 6</span>
-    </button>
-    <div class="pm-center">✿</div>
+    <button class="pm-btn" onclick="openGame(0)"><div class="pm-shape"></div><span class="pm-label">01</span></button>
+    <button class="pm-btn" onclick="openGame(1)"><div class="pm-shape"></div><span class="pm-label">02</span></button>
+    <button class="pm-btn" onclick="openGame(2)"><div class="pm-shape"></div><span class="pm-label">03</span></button>
+    <button class="pm-btn" onclick="openGame(3)"><div class="pm-shape"></div><span class="pm-label">04</span></button>
+    <button class="pm-btn" onclick="openGame(4)"><div class="pm-shape"></div><span class="pm-label">05</span></button>
+    <button class="pm-btn" onclick="openGame(5)"><div class="pm-shape"></div><span class="pm-label">06</span></button>
+    <div class="pm-center"></div>
   </div>
 </div>
 
-<!-- ══════════ GAME OVERLAY ══════════ -->
+<!-- ═══ GAME OVERLAY ═══ -->
 <div id="game-overlay">
   <div class="game-topbar">
-    <span class="game-title-bar" id="game-title-bar">Game</span>
+    <span class="game-title-bar" id="game-title-bar"></span>
     <button class="game-close" onclick="closeGame()">✕</button>
   </div>
-  <iframe id="game-frame" src="" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+  <iframe id="game-frame" src=""
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
 </div>
 
 <script src="js/app.js"></script>
